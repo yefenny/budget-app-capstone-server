@@ -1,76 +1,108 @@
-# Node and PostgreSQL Boilerplate app
-## How to set it up
-1. Clone this repository to your local machine
-2. Install the dependencies for the project:
-    ```console
-    npm install
-    ```
-3. If there are high vulnerabilities reported during the install:
-    ```console
-    npm audit fix --force
-    ```
-4. Ensure your PostgreSQL server is running:
-    ```console
-    pg_ctl restart
-    ```
-5. Create a User for this project:
-    ```console
-    createuser testuser
-    ```
-6. Create a database for the project with your user as the owner:
-    ```console
-    createdb testdb
-    ```
-7. Grant all privileges for the new database
-    ```console
-    psql testdb
-    ```
-    ```sql
-    alter user testuser with encrypted password 'qwerty';
-    grant all privileges on database testdb to testuser;
-    ```
-8. Rename the `example.env` file to `.env` and update the following fields with your database credentials:
-    ```console
-    MIGRATION_DB_NAME=
-    MIGRATION_DB_USER=
-    MIGRATION_DB_PASS=
-    DB_URL="postgresql://USERNAME@localhost/DATABASE_NAME"
-    ```
-9. Create the database tables:
-    ```console
-    npm run migrate -- 1
-    ```
-10. Start the tests:
-    ```console
-    npm t
-    ```
-11. You should see output from 10 integration tests, all passing.
+# Capstone Project Title (to do now)
 
+One line description of what this app is doing and who is it for
 
-## Local Node scripts
-* To install the node project ===> npm install
-* To fix vulnerabilities after installation ===> npm audit fix --force
-* To migrate the database ===> npm run migrate -- 1
-* To run Node server (on port 8000) ===> npm run dev
-* To run tests ===> npm run test
+### 1. Working Prototype (to do later)
 
+(Example) You can access a working prototype of the React app here: https://your-app-client.herokuapp.com/ and Node app here: https://your-app-server.herokuapp.com/
 
+### 2. User Stories (to do now)
 
+This app is for two types of users: a visitor and a logged-in user
 
-## App Structure
+###### (Example) Landing Page (Importance - High) (Est: 1h)
 
-* __migration__ folder contains all the sql files necesay for the DB setup
-* __public__ folder contains the View related files
-* __src__ folder contains the Controller related files
-    * __server.js__ is the entry point of the Controller logic (where all the general app settings live)
-    * __app.js__ is the starting pint for the routes
+- as a visitor
+- I want to understand what I can do with this app (or sign up, or log in)
+- so I can decide if I want to use it
 
-    * __pancake__ folder contains the router with all the pancake API endpoints
-        * __pancake-router.js__ Pancake Router
-            * GET Endpoint: Add a GET endpoint to this server
-            * POST Endpoint: Add a POST endpoint to this server
-            * DELETE Endpoint: Add a Delete endpoint to this server
-            * PATCH Endpoint: Add a PATCH Endpoint to this server
-        * __pancake-service.js__ Service file for the Controller connection witht the Model
-    * __middleware__ folder contains functions that are used by the controller in multiple places
-* __test__ folder contains the Test files
+###### (Example) Login Page (Importance - High) (Est: 3h)
+
+- As a returning register user
+- I want to enter my password and username to use this app,
+- So I can have access to my account.
+
+###### (Example) Sign Up (Importance - High) (Est: 3h)
+
+- As a visitor
+- I want to register to use this app
+- So I can create a personal account.
+
+###### (Example) Home Page (Importance - Medium) (Est: 2h)
+
+- As a logged-in user,
+- I want to be able to preview the content of the app,
+- So i can decide what section I want to navigate to.
+
+### 3. Functionality (to do now)
+
+The app's functionality includes:
+
+- (Example) Every User has the ability to create an account
+
+### 4. Technology (done)
+
+- Front-End: HTML5, CSS3, JavaScript ES6, React
+- Back-End: Node.js, Express.js, Mocha, Chai, RESTful API Endpoints, Postgres
+- Development Environment: Heroku, DBeaver
+
+### 5. Wireframes (to do now)
+
+(Example) Landing Page
+:-------------------------:
+![Landing Page](/github-images/wireframes/landing-page-wireframe.png)
+Register Page
+![Register Page](/github-images/wireframes/register-page-wireframe.png)
+
+### 6. Front-end Structure - React Components Map (to do later)
+
+- (Example) **Index.js** (stateless)
+  - **App.js** (stateful)
+    - **LandingPage.js** (stateful) - gets the _"prop name"_ and the _"callback prop name"_ from the **App.js**
+      - **Login.js** (stateful) -
+      - **Register.js** (stateful) -
+    - **Navbar.js** (stateless) -
+
+### 7. Back-end Structure - Business Objects (to do later)
+
+- (Example) Users (database table)
+  - id (auto-generated)
+  - username (email validation)
+  - password (at least 8 chars, at least one alpha and a special character validation)
+
+### 8. API Documentation (to do later)
+
+API Documentation details:
+
+- (Example) get all users
+
+### 9. Screenshots (to do later)
+
+(Example) Landing Page
+:-------------------------:
+![Landing Page](/github-images/screenshots/landing-page-screenshot.png)
+Register Page
+![Register Page](/github-images/screenshots/register-page-screenshot.png)
+
+### 10. Development Roadmap (to do later)
+
+This is v1.0 of the app, but future enhancements are expected to include:
+
+- (Example) add more functionality
+
+### 11. How to run it (done)
+
+Use command line to navigate into the project folder and run the following in terminal
+
+##### Local React scripts
+
+- To install the react project ===> npm install
+- To run react (on port 3000) ===> npm start
+- To run tests ===> npm run test
+
+##### Local Node scripts
+
+- To install the node project ===> npm install
+- To migrate the database ===> npm run migrate -- 1
+- To run Node server (on port 8000) ===> npm run dev
+- To run tests ===> npm run test
