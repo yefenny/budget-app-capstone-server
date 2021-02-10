@@ -1,46 +1,86 @@
-# Capstone Project Title (to do now)
+# Budget app
 
-One line description of what this app is doing and who is it for
+Don't know how you expend all your money ? Budget app can help you, This app allows you to track your expenses and incomes easily an get in control of your spending!
 
 ### 1. Working Prototype (to do later)
 
 (Example) You can access a working prototype of the React app here: https://your-app-client.herokuapp.com/ and Node app here: https://your-app-server.herokuapp.com/
 
-### 2. User Stories (to do now)
+### 2. User Stories
 
-This app is for two types of users: a visitor and a logged-in user
-
-###### (Example) Landing Page (Importance - High) (Est: 1h)
+###### Landing Page (Importance - High) (Est: 1h)
 
 - as a visitor
 - I want to understand what I can do with this app (or sign up, or log in)
 - so I can decide if I want to use it
 
-###### (Example) Login Page (Importance - High) (Est: 3h)
+###### Login Page (Importance - High) (Est: 3h)
 
 - As a returning register user
 - I want to enter my password and username to use this app,
 - So I can have access to my account.
 
-###### (Example) Sign Up (Importance - High) (Est: 3h)
+###### Sign Up (Importance - High) (Est: 3h)
 
 - As a visitor
 - I want to register to use this app
 - So I can create a personal account.
 
-###### (Example) Home Page (Importance - Medium) (Est: 2h)
+###### Home Page (Importance - Medium) (Est: 2h)
 
 - As a logged-in user,
 - I want to be able to preview the content of the app,
 - So i can decide what section I want to navigate to.
+- I can see the total amount of my month expenses.
+- I can see the total amount of my month incomes.
 
-### 3. Functionality (to do now)
+###### Expenses Page (Importance - Medium) (Est: 3h)
+
+- As a logged-in user,
+- I would be able to see all month expenses,
+- I can choose to edit or delete any expense,
+- I can filter all expenses by date.
+
+###### New Expense Page (Importance - Medium) (Est: 3h)
+
+- As a logged-in user,
+- I would be able to add a new expense.
+- The new expense will have date, category, title and amount.
+
+###### Edit Expense Page (Importance - Medium) (Est: 3h)
+
+- As a logged-in user,
+- I would be able to edit a existing expense.
+
+###### Incomes Page (Importance - Medium) (Est: 3h)
+
+- As a logged-in user,
+- I would be able to see all month incomes,
+- I can choose to edit or delete any income,
+- I can filter all incomes by date.
+
+###### New Income Page (Importance - Medium) (Est: 3h)
+
+- As a logged-in user,
+- I would be able to add a new income.
+- The new income will have date, category, title and amount.
+
+###### Edit Income Page (Importance - Medium) (Est: 3h)
+
+- As a logged-in user,
+- I would be able to edit a existing income.
+
+### 3. Functionality
 
 The app's functionality includes:
 
-- (Example) Every User has the ability to create an account
+- Every User has the ability to create an account.
+- A logged in User has the ability to add see the total amount of incomes and expenses.
+- A logged in User can add new incomes and expenses.
+- A logged in User can filter incomes and expenses by date.
+- A logged in user can delete or edit an income or expense.
 
-### 4. Technology (done)
+### 4. Technology
 
 - Front-End: HTML5, CSS3, JavaScript ES6, React
 - Back-End: Node.js, Express.js, Mocha, Chai, RESTful API Endpoints, Postgres
@@ -48,11 +88,27 @@ The app's functionality includes:
 
 ### 5. Wireframes (to do now)
 
-(Example) Landing Page
+Landing Page
 :-------------------------:
-![Landing Page](/github-images/wireframes/landing-page-wireframe.png)
-Register Page
-![Register Page](/github-images/wireframes/register-page-wireframe.png)
+![Landing Page](github-images/wireframes/Budget-app-landigpage.png)
+Sign Up Page
+![Sign Up Page](/github-images/wireframes/Budget-app-signup.png)
+Log in Page
+![Log in Page](/github-images/wireframes/Budget-app-login.png)
+Dashboard Page
+![Dashboard Page](/github-images/wireframes/Budget-app-home-page.png)
+Incomes Page
+![Incomes Page](/github-images/wireframes/Budget-app-incomes-page.png)
+New Income Page
+![New income Page](/github-images/wireframes/Budget-app-new-income.png)
+Edit Income Page
+![Edit income Page](/github-images/wireframes/Budget-app-edit-income.png)
+Expenses Page
+![Expense Page](/github-images/wireframes/Budget-app-expenses.png)
+New Expense Page
+![New expense Page](github-images/wireframes/Budget-app-new-expense.png)
+Edit Expense Page
+![Edit Expense Page](/github-images/wireframes/Budget-app-edit-expense.png)
 
 ### 6. Front-end Structure - React Components Map (to do later)
 
