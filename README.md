@@ -90,25 +90,25 @@ The app's functionality includes:
 
 Landing Page
 :-------------------------:
-![Landing Page](github-images/wireframes/Budget-app-landigpage.png)
+![Landing Page](./github-images/wireframes/Budget-app-landigpage.png)
 Sign Up Page
-![Sign Up Page](/github-images/wireframes/Budget-app-signup.png)
+![Sign Up Page](./github-images/wireframes/Budget-app-signup.png)
 Log in Page
-![Log in Page](/github-images/wireframes/Budget-app-login.png)
+![Log in Page](./github-images/wireframes/Budget-app-login.png)
 Dashboard Page
-![Dashboard Page](/github-images/wireframes/Budget-app-home-page.png)
+![Dashboard Page](./github-images/wireframes/Budget-app-home-page.png)
 Incomes Page
-![Incomes Page](/github-images/wireframes/Budget-app-incomes-page.png)
+![Incomes Page](./github-images/wireframes/Budget-app-incomes-page.png)
 New Income Page
-![New income Page](/github-images/wireframes/Budget-app-new-income.png)
+![New income Page](./github-images/wireframes/Budget-app-new-income.png)
 Edit Income Page
-![Edit income Page](/github-images/wireframes/Budget-app-edit-income.png)
+![Edit income Page](./github-images/wireframes/Budget-app-edit-income.png)
 Expenses Page
-![Expense Page](/github-images/wireframes/Budget-app-expenses.png)
+![Expense Page](./github-images/wireframes/Budget-app-expenses.png)
 New Expense Page
-![New expense Page](github-images/wireframes/Budget-app-new-expense.png)
+![New expense Page](./github-images/wireframes/Budget-app-new-expense.png)
 Edit Expense Page
-![Edit Expense Page](/github-images/wireframes/Budget-app-edit-expense.png)
+![Edit Expense Page](./github-images/wireframes/Budget-app-edit-expense.png)
 
 ### 6. Front-end Structure - React Components Map (to do later)
 
