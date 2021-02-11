@@ -119,12 +119,40 @@ Edit Expense Page
       - **Register.js** (stateful) -
     - **Navbar.js** (stateless) -
 
-### 7. Back-end Structure - Business Objects (to do later)
+### 7. Back-end Structure - Business Objects
 
-- (Example) Users (database table)
+- users (database table)
+
   - id (auto-generated)
   - username (email validation)
   - password (at least 8 chars, at least one alpha and a special character validation)
+
+- income_category (database table)
+
+  - id (auto-generated)
+  - title (varchar validation)
+
+- incomes (database table)
+
+  - id (auto-generated)
+  - user_id (foreign key from users table)
+  - date (date validation)
+  - description (varchar (255) not null)
+  - amount (double not null )
+  - income_category_id (foreign key from income_category table);
+
+- expense_category (database table)
+
+  - id (auto-generated)
+  - title (varchar validation)
+
+- expenses (database table)
+  - id (auto-generated)
+  - user_id (foreign key from users table)
+  - date (date validation)
+  - description (varchar (255) not null)
+  - amount (double not null )
+  - expense_category_id (foreign key from income_category table);
 
 ### 8. API Documentation (to do later)
 
