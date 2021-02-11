@@ -74,7 +74,7 @@ Don't know how you expend all your money ? Budget app can help you, This app all
 
 The app's functionality includes:
 
-- Every User has the ability to create an account.
+- Every User has the ability to create an account and log in.
 - A logged in User has the ability to add see the total amount of incomes and expenses.
 - A logged in User can add new incomes and expenses.
 - A logged in User can filter incomes and expenses by date.
