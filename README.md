@@ -127,7 +127,7 @@ Edit Expense Page
   - username (email validation)
   - password (at least 8 chars, at least one alpha and a special character validation)
 
-- income_category (database table)
+- income_categories (database table)
 
   - id (auto-generated)
   - title (varchar validation)
@@ -141,7 +141,7 @@ Edit Expense Page
   - amount (double not null )
   - income_category_id (foreign key from income_category table);
 
-- expense_category (database table)
+- expense_categories (database table)
 
   - id (auto-generated)
   - title (varchar validation)
