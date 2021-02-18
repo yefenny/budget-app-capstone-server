@@ -31,8 +31,10 @@ Don't know how you expend all your money ? Budget app can help you, This app all
 - As a logged-in user,
 - I want to be able to preview the content of the app,
 - So i can decide what section I want to navigate to.
+- I can see the month initial balance.
 - I can see the total amount of my month expenses.
 - I can see the total amount of my month incomes.
+- I would be able to see the current balance.
 
 ###### Expenses Page (Importance - Medium) (Est: 3h)
 

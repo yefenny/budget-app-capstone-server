@@ -8,11 +8,14 @@ TRUNCATE
   "expenses",
   "pancake";
 
-INSERT INTO "users" ("id", "user_name", "password")
+
+
+INSERT INTO "users" ("id", "user_name","name", "password")
 VALUES
   (
     1,
     'admin',
+    'test admin',
     -- password = "pass"
     '$2a$10$fCWkaGbt7ZErxaxclioLteLUgg4Q3Rp09WW0s/wSLxDKYsaGYUpjG'
   );
