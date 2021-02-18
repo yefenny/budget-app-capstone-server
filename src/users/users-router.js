@@ -4,10 +4,10 @@ const UsersService = require('./users-service');
 const usersRouter = express.Router();
 const jsonBodyParser = express.json();
 
-usersRouter.route('/signup').post(jsonBodyParser, async (req, res, next) => {
-  const { password, username, name } = req.body;
+usersRouter.route('/').post(jsonBodyParser, async (req, res, next) => {
+  const { password, user_name, name } = req.body;
 
-  for (const field of ['name', 'username', 'password'])
+  for (const field of ['name', 'user_name', 'password'])
     if (!req.body[field])
       return res.status(400).json({
         error: `Missing '${field}' in request body`
@@ -20,25 +20,23 @@ usersRouter.route('/signup').post(jsonBodyParser, async (req, res, next) => {
 
     const hasUserWithUserName = await UsersService.hasUserWithUserName(
       req.app.get('db'),
-      username
+      user_name
     );
 
     if (hasUserWithUserName)
-      return res.status(400).json({ error: `Username already taken` });
+      return res.status(400).json({ error: `User_name already taken` });
 
     const hashedPassword = await UsersService.hashPassword(password);
 
     const newUser = {
-      username,
+      user_name,
       password: hashedPassword,
       name
     };
 
     const user = await UsersService.insertUser(req.app.get('db'), newUser);
 
-    await UsersService.populateUserWords(req.app.get('db'), user.id);
-
-    const sub = user.username;
+    const sub = user.user_name;
     const payload = {
       user_id: user.id,
       name: user.name
