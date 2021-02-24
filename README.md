@@ -2,9 +2,9 @@
 
 Don't know how you expend all your money ? Budget app can help you, This app allows you to track your expenses and incomes easily an get in control of your spending!
 
-### 1. Working Prototype (to do later)
+### 1. Working Prototype 
 
-(Example) You can access a working prototype of the React app here: https://your-app-client.herokuapp.com/ and Node app here: https://your-app-server.herokuapp.com/
+ You can access a working prototype of the React app here:https://budget-app-capstone-client.vercel.app/ and Node app here: https://budget-app-capstone.herokuapp.com/
 
 ### 2. User Stories
 
