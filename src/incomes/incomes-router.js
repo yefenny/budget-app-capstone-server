@@ -48,8 +48,7 @@ incomesRouter
       .then((income) => {
         if (income) {
           return res.status(200).json(income);
-        } else
-          return res.status(400).json({ error: { message: 'Invalid id' } });
+        } else return res.status(400).json({ error: 'Invalid id' });
       })
       .catch(next);
   })
@@ -60,9 +59,7 @@ incomesRouter
     IncomesService.getIncomeById(req.app.get('db'), id, userId).then(
       (income) => {
         if (!income)
-          return res
-            .status(400)
-            .json({ error: { message: 'Income does not exists' } });
+          return res.status(400).json({ error: 'Income does not exists' });
       }
     );
 
@@ -72,21 +69,22 @@ incomesRouter
       })
       .catch(next);
   })
-  // .all(validateIncome)
+  .all(validateIncome)
   .patch((req, res, next) => {
-    const { title, url, description } = req.body;
+    const { date, amount, description, income_category_id } = req.body;
     const { id } = req.params;
     const userId = req.user.id;
     const updateIncome = {
-      title
+      date,
+      amount,
+      description,
+      income_category_id
     };
-    if (url) updateIncome.url = url;
-    if (description) updateIncome.description = description;
 
     IncomesService.getIncomeById(req.app.get('db'), id, userId).then(
       (income) => {
         if (!income)
-          return res.status(400).json({ error: { message: 'Invalid id' } });
+          return res.status(400).json({ error:  'Invalid id'  });
       }
     );
     IncomesService.updateIncome(req.app.get('db'), id, userId, updateIncome)

@@ -1,6 +1,6 @@
 const IncomesService = {
   getAllIncomes(db, userId) {
-    const query = `select i.id, i.date, i.description, i.amount, ic.title as category from incomes i join income_categories ic on ic.id = i.income_category_id where i.user_id = ${userId}`;
+    const query = `select i.id, i.date, i.description, i.amount, ic.title as category from incomes i join income_categories ic on ic.id = i.income_category_id where i.user_id = ${userId} ORDER BY i.date DESC;`;
     return db.raw(query).then((res) => res.rows);
   },
   getFilteredIncomes(db, fromDate, toDate, userId) {

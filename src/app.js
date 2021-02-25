@@ -11,6 +11,10 @@ const usersRouter = require('./users/users-router');
 const incomesRouter = require('./incomes/incomes-router');
 const { requireAuth } = require('./middleware/jwt-auth');
 const incomeCategoriesRouter = require('./income-categories/income-categories-router');
+const expensesRouter = require('./expenses/expenses-router');
+
+const expenseCategoriesRouter = require('./expense-categories/expense-categories-router');
+const balanceRouter = require('./balances/balances-router');
 
 const jsonParser = express.json();
 const app = express();
@@ -30,8 +34,11 @@ app.use(jsonParser);
 app.use('/api/users', usersRouter);
 app.use('/api/auth', authRouter);
 app.use(requireAuth);
+app.use('/api/balances', balanceRouter);
 app.use('/api/incomes', incomesRouter);
+app.use('/api/expenses', expensesRouter);
 app.use('/api/income-categories', incomeCategoriesRouter);
+app.use('/api/expense-categories', expenseCategoriesRouter);
 app.use('/api/pancakes', pancakeRouter);
 app.use(errorHandler);
 
