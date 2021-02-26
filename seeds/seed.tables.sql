@@ -91,6 +91,7 @@ VALUES
 -- update the sequencer for future automatic id setting
 SELECT setval('users_id_seq', (SELECT MAX(id) from "users"));
 SELECT setval('income_categories_id_seq', (SELECT MAX(id) from "income_categories"));
+SELECT setval('expense_categories_id_seq', (SELECT MAX(id) from "expense_categories"));
 SELECT setval('incomes_id_seq', (SELECT MAX(id) from "incomes"));
 SELECT setval('expenses_id_seq', (SELECT MAX(id) from "expenses"));
 SELECT setval('pancake_id_seq', (SELECT MAX(id) from "pancake"));

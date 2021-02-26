@@ -33,13 +33,14 @@ app.use(express.static('public'));
 app.use(jsonParser);
 app.use('/api/users', usersRouter);
 app.use('/api/auth', authRouter);
+app.use('/api/pancakes', pancakeRouter);
 app.use(requireAuth);
 app.use('/api/balances', balanceRouter);
 app.use('/api/incomes', incomesRouter);
 app.use('/api/expenses', expensesRouter);
 app.use('/api/income-categories', incomeCategoriesRouter);
 app.use('/api/expense-categories', expenseCategoriesRouter);
-app.use('/api/pancakes', pancakeRouter);
+
 app.use(errorHandler);
 
 module.exports = app;
