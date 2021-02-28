@@ -2,9 +2,9 @@
 
 Don't know how you expend all your money ? Budget app can help you, This app allows you to track your expenses and incomes easily an get in control of your spending!
 
-### 1. Working Prototype 
+### 1. Working Prototype
 
- You can access a working prototype of the React app here:https://budget-app-capstone-client.vercel.app/ and Node app here: https://budget-app-capstone.herokuapp.com/
+You can access a working prototype of the React app here:https://budget-app-capstone-client.vercel.app/ and Node app here: https://budget-app-capstone.herokuapp.com/
 
 ### 2. User Stories
 
@@ -160,7 +160,486 @@ Edit Expense Page
 
 API Documentation details:
 
-- (Example) get all users
+```text
+/api
+.
+├── /incomes
+│   └── GET
+│       ├── /
+│       ├── /find/:fromDate/:toDate
+│       ├── /:id
+│   └── POST
+│       ├── /
+│   └── PATCH
+│       ├── /:id
+│   └── DELETE
+│       ├── /:id
+├── /users
+│   └── POST
+│       ├── /
+├── /auth
+│   └── POST
+│       └── /token
+├── /expenses
+│   └── GET
+│       ├── /
+│       ├── /:id
+│       ├── /find/:fromDate/:toDate
+│   └── POST
+│       └── /
+│   └── PATCH
+│       └── /:id
+│   └── DELETE
+│       └── /:id
+├── /expense-categories
+│   └── GET
+│       ├── /
+├── /income-categories
+│   └── GET
+│       ├── /
+```
+
+#### GET `/api/incomes/`
+
+```js
+// req.header
+{
+    "Authorization": "Bearer ${token}",
+}
+
+// res.body
+[
+
+     {
+        "id": 7,
+        "date": "2021-02-25T05:00:00.000Z",
+        "description": "Other",
+        "amount": 100,
+        "category": "Other Income"
+    },
+    {
+        "id": 3,
+        "date": "2021-02-01T05:00:00.000Z",
+        "description": "Supermarket 22",
+        "amount": 40,
+        "category": "Financial Aid"
+    },
+    {
+        "id": 8,
+        "date": "2021-02-01T05:00:00.000Z",
+        "description": "Supermarket 1",
+        "amount": 35.2,
+        "category": "Financial Aid"
+    },
+   ...
+]
+```
+
+#### GET `/api/incomes/:id`
+
+```js
+// req.header
+{
+    "Authorization": "Bearer ${token}",
+}
+
+// req.params
+{
+  id:id
+}
+
+// res.body
+
+ {
+        "id": 8,
+        "date": "2021-02-01T05:00:00.000Z",
+        "description": "Supermarket 1",
+        "amount": 35.2,
+        "category": "Financial Aid"
+}
+
+
+```
+
+#### GET `/api/income-categories/`
+
+```js
+// req.header
+{
+    "Authorization": "Bearer ${token}",
+}
+
+// res.body
+[
+
+    {
+        "id": 1,
+        "title": "Salary"
+    },
+    {
+        "id": 2,
+        "title": "Dividends"
+    },
+    {
+        "id": 3,
+        "title": "Financial Aid"
+    },
+   ...
+]
+```
+
+#### GET `/api/incomes/find/:fromDate/:toDate`
+
+```js
+// req.header
+{
+    "Authorization": "Bearer ${token}",
+}
+// req.params
+{
+  fromDate:fromDate,
+  toDate:toDate
+}
+
+// res.body
+[
+
+     {
+        "id": 2,
+        "date": "2021-01-29T05:00:00.000Z",
+        "description": "Aid 2",
+        "amount": 500,
+        "category": "Financial Aid"
+    },
+   ...
+]
+```
+
+#### POST `/api/incomes/`
+
+```js
+// req.header
+{
+    "Authorization": "Bearer ${token}",
+}
+
+// req.body
+
+ {"user_id": "1",
+  "date": "2021/02/01",
+  "description": "Supermarket 1",
+  "amount": "35.20",
+  "income_category_id":"3"}
+
+// res.body
+
+{
+    "id": 9,
+    "user_id": 1,
+    "date": "2021-02-01T05:00:00.000Z",
+    "description": "Supermarket 1",
+    "amount": 35.2,
+    "income_category_id": 3
+}
+
+```
+
+#### PATCH `/api/incomes/:id`
+
+```js
+// req.header
+{
+    "Authorization": "Bearer ${token}",
+}
+
+// req.body
+{
+  id: id
+}
+// res.body
+
+ { "date": "2021/02/11",
+ "description": "Supermarket 2",
+ "amount": "35.20",
+ "income_category_id":"3"}
+
+// res.body
+
+  {
+
+}
+
+```
+
+#### Delete `/api/incomes/:id`
+
+```js
+// req.header
+{
+    "Authorization": "Bearer ${token}",
+}
+
+// req.params
+{
+  id:id
+}
+
+
+// res.body
+
+  {
+
+}
+
+```
+
+#### POST `/api/auth/token`
+
+```js
+
+// req.body
+
+
+  {
+    "user_name": "user test",
+"password": "password"
+}
+
+
+// res.body
+
+
+{
+    "authToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJpYXQiOjE2MTE4Nzk2NzUsInN1YiI6ImR1bmRlckBnbWFpbC5jb20ifQ.ku3rU1lGeWVEUvA-_NWDQoM7hauIZU1V4K0EmPgMwlY"
+}
+
+
+```
+
+#### POST `/api/users/`
+
+```js
+
+// req.body
+
+{
+"user_name": "test@gmail.com",
+"name": "test name",
+"password": "testpassword"
+}
+
+
+
+// res.body
+
+
+{
+    "authToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJpYXQiOjE2MTE4Nzk2NzUsInN1YiI6ImR1bmRlckBnbWFpbC5jb20ifQ.ku3rU1lGeWVEUvA-_NWDQoM7hauIZU1V4K0EmPgMwlY"
+}
+
+
+```
+
+#### GET `/api/expenses/
+
+```js
+// req.header
+{
+    "Authorization": "Bearer ${token}",
+}
+
+// res.body
+[
+   {
+        "id": 5,
+        "date": "2021-02-25T05:00:00.000Z",
+        "description": "G",
+        "amount": 333,
+        "category": "Groceries"
+    },
+    {
+        "id": 3,
+        "date": "2021-02-12T05:00:00.000Z",
+        "description": "Rent",
+        "amount": 1200,
+        "category": "Mortgage / Rent"
+    },
+    ...
+]
+
+
+```
+
+#### GET `/api/expenses/:id`
+
+```js
+// req.header
+{
+    "Authorization": "Bearer ${token}",
+}
+
+// req.params
+{
+  id: id
+}
+
+// res.body
+
+   {
+        "id": 5,
+        "date": "2021-02-25T05:00:00.000Z",
+        "description": "G",
+        "amount": 333,
+        "category": "Groceries"
+    }
+
+
+
+```
+
+#### GET `/api/expenses/find/:fromDate/:toDate`
+
+```js
+// req.header
+{
+    "Authorization": "Bearer ${token}",
+}
+
+// req.params
+{
+  fromDate:fromDate,
+  toDate:toDate
+}
+
+// res.body
+
+   [
+    {
+        "id": 2,
+        "date": "2021-02-06T05:00:00.000Z",
+        "description": "Supermarket 3",
+        "amount": 40.01,
+        "category": "Groceries"
+    },
+    {
+        "id": 3,
+        "date": "2021-02-12T05:00:00.000Z",
+        "description": "Rent",
+        "amount": 1200,
+        "category": "Mortgage / Rent"
+    },
+]
+
+
+```
+
+#### POST `/api/expenses/`
+
+```js
+
+// req.header
+{
+    "Authorization": "Bearer ${token}",
+}
+// req.body
+
+{"user_id": "1",
+ "date": "2021/02/01",
+ "description": "Supermarket 1",
+ "amount": "35.20",
+ "expense_category_id":"3"
+ }
+
+
+
+// res.body
+
+
+{
+    "id": 7,
+    "user_id": 1,
+    "date": "2021-02-01T05:00:00.000Z",
+    "description": "Supermarket 1",
+    "amount": 35.2,
+    "expense_category_id": 3
+}
+
+
+```
+
+#### PATCH `/api/expenses/:id`
+
+```js
+// req.header
+{
+    "Authorization": "Bearer ${token}",
+}
+
+// req.params
+{
+  id: id
+}
+
+// req.body
+
+{ "date": "2021/02/11",
+"description": "Supermarket 2",
+"amount": "35.20",
+"expense_category_id":"3"
+}
+
+```
+
+#### DELETE `/api/expenses/:id`
+
+```js
+// req.header
+{
+    "Authorization": "Bearer ${token}",
+}
+
+// req.params
+{
+  id:id
+}
+
+// res.body
+
+{
+}
+
+```
+
+#### GET `/api/expense-categories/`
+
+```js
+// req.header
+{
+    "Authorization": "Bearer ${token}",
+}
+
+// res.body
+[
+
+    {
+        "id": 1,
+        "title": "Alimony"
+    },
+    {
+        "id": 2,
+        "title": "Car Insurance"
+    },
+    {
+        "id": 3,
+        "title": "Car Payment"
+    },
+    {
+        "id": 4,
+        "title": "Car Repair / Licenses"
+    },
+   ...
+]
+```
 
 ### 9. Screenshots (to do later)
 
