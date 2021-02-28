@@ -1,3 +1,7 @@
+const pg = require('pg');
+pg.defaults.ssl =
+  process.env.NODE_ENV === 'production' ? { rejectUnauthorized: false } : false;
+
 module.exports = {
   PORT: process.env.PORT || 8000,
   NODE_ENV: process.env.NODE_ENV || 'development',
